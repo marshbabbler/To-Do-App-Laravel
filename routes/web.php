@@ -23,7 +23,7 @@ Route::get('/contact-us', function () { // Path
 // Route::get('/contact-us', ContactController::index())->name('contact);
 
 
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')->group(function(){ // user for add group link like Admin;
     // Route::get('/contact-us', function () { // Path
     //     return view('contact'); // Page
     // })->name('contact');
