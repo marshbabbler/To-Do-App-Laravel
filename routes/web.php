@@ -7,7 +7,8 @@ use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
 
-// Route::redirect('/home', '/create-list'); // This redirect user to send parameter;
+Route::redirect('/home', '/create-list'); // This redirect user to send parameter;
+Route::redirect('/', '/create-list'); // This redirect user to send parameter;
 
 // Route::get('/create-list', function () { // Path
 //     return view('create'); // Page
