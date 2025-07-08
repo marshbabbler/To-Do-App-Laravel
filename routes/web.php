@@ -7,8 +7,8 @@ use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
 
-Route::redirect('/home', '/create-list'); // This redirect user to send parameter;
-Route::redirect('/', '/create-list'); // This redirect user to send parameter;
+Route::redirect('/home', '/create'); // This redirect user to send parameter;
+Route::redirect('/', '/create'); // This redirect user to send parameter;
 
 // Route::get('/create-list', function () { // Path
 //     return view('create'); // Page
@@ -40,6 +40,8 @@ Route::redirect('/', '/create-list'); // This redirect user to send parameter;
 // });
 
 Route::get('/create', [CreateController::class, 'index'])->name('create');
+Route::post('/store', [CreateController::class, 'store'])->name('taskCreate');
+
 Route::get('/delete', [DeleteController::class, 'index'])->name('delete');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
