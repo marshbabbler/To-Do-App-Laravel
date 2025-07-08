@@ -3,18 +3,21 @@
 @section('title', 'Create Page')
 
 @section('content')
-    <h1>Create Page!</h1>
-    <h2 class="text-center">{{ $title }}</h2>
-    <h3 style="text-align: center">My Name is {{ $name }}</h3>
-
-    @if($isAdmin = False)
-        <h5>I Am Admin</h5>
-    @else
-        <h5>I Am Not Admin</h5>
-    @endif
-
-    @foreach ($collection as $item)
-        <p>{{Str::upper($item['title'])}}</p>
-        <p>{{$item['body']}}</p>
-    @endforeach
+    <div class="container">
+        <form action='{{ route('taskCreate') }}' method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title">
+                {{-- <div id="emailHelp" class="form-text"></div> --}}
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                {{-- <input type="text" class="form-control" id="description" name="description"> --}}
+                <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+                {{-- <div id="emailHelp" class="form-text"></div> --}}
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 @endsection
